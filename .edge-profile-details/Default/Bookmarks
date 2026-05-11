@@ -1,0 +1,194 @@
+{
+   "checksum": "d8279929b5966219a741cc267e2fa30c",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13398349352713652",
+            "date_last_used": "13404387251028408",
+            "guid": "ccecbce6-7922-4106-b1fd-e86ea15ecf4c",
+            "id": "12",
+            "name": "TCT Time Sheet - Google Sheets",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://docs.google.com/spreadsheets/d/19LVx25KLlc2Tprm_0XJWpSqUvFUoeUgY5s_tFekCqYo/edit?pli=1&gid=1766165397#gid=1766165397",
+            "visit_count": 6
+         }, {
+            "date_added": "13395141691198581",
+            "date_last_used": "0",
+            "guid": "932980b6-99d4-4ad0-8954-4253e7e10882",
+            "id": "13",
+            "name": "Orders",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "http://localhost:4200/admin/orders",
+            "visit_count": 0
+         }, {
+            "date_added": "13391711253928774",
+            "date_last_used": "13403181028860853",
+            "guid": "5cc274d4-7ba9-4266-b37a-9912bab65409",
+            "id": "14",
+            "name": "Book hotels & vacation rentals",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "http://www.booking.com/?aid=845847&sjtSource=linksbar",
+            "visit_count": 1
+         }, {
+            "date_added": "13391711253927805",
+            "date_last_used": "0",
+            "guid": "4f59d7f9-bc2a-4e00-9f45-c05fa02ec382",
+            "id": "15",
+            "name": "Aliexpress Shopping",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://alitems.com/g/1e8d114494d371ae616e16525dc3e8/",
+            "visit_count": 0
+         }, {
+            "date_added": "13326620985473169",
+            "date_last_used": "0",
+            "guid": "309f2cf5-0396-4dd0-b4f5-1d1ca89440ed",
+            "id": "16",
+            "name": "Gmail",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://accounts.google.com/b/0/AddMailService",
+            "visit_count": 0
+         }, {
+            "date_added": "13326620985775226",
+            "date_last_used": "13405148548306367",
+            "guid": "a7cc52eb-7c97-4bd7-9176-d3ab636f1e3b",
+            "id": "17",
+            "name": "YouTube",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://youtube.com/",
+            "visit_count": 1
+         }, {
+            "date_added": "13304108645119416",
+            "date_last_used": "0",
+            "guid": "84c61ceb-95d0-4f62-a3cc-ff62ae7d539b",
+            "id": "18",
+            "name": "Maps",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://maps.google.com/",
+            "visit_count": 0
+         } ],
+         "date_added": "13422906061240638",
+         "date_last_used": "0",
+         "date_modified": "13398349352713652",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favourites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "date_added": "13393341375983634",
+            "date_last_used": "0",
+            "guid": "8b29c988-fc10-4a27-a4e5-97dea72b8010",
+            "id": "7",
+            "name": "TCT Time Sheet - Google Sheets",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://docs.google.com/spreadsheets/d/19LVx25KLlc2Tprm_0XJWpSqUvFUoeUgY5s_tFekCqYo/edit?pli=1&gid=772343977#gid=772343977",
+            "visit_count": 0
+         }, {
+            "date_added": "13394113168379899",
+            "date_last_used": "0",
+            "guid": "40ddcfd1-ab5c-460b-b3f0-cdaefc59b41a",
+            "id": "8",
+            "name": "AJ WebStore - Server",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://refactored-guide-4jj67q4vp5pj35qvx.github.dev/",
+            "visit_count": 0
+         }, {
+            "date_added": "13394113182491865",
+            "date_last_used": "0",
+            "guid": "1f752156-ed6b-4297-920f-ba3454e27d35",
+            "id": "9",
+            "name": "AJ WebStore - FrontEnd",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://upgraded-space-fishstick-wr5p5xgxrw6hwq6.github.dev/",
+            "visit_count": 0
+         }, {
+            "date_added": "13400063160753335",
+            "date_last_used": "0",
+            "guid": "bd0444cd-4646-490a-b7fa-df5d3e115517",
+            "id": "10",
+            "name": "Brain V2.16",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "http://172.20.60.17:76/Att_Home.aspx",
+            "visit_count": 0
+         }, {
+            "date_added": "13404216267638109",
+            "date_last_used": "0",
+            "guid": "01729bcd-ecc0-4707-ab2f-0106763ceab8",
+            "id": "11",
+            "name": "New tab",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "edge://newtab/",
+            "visit_count": 1
+         } ],
+         "date_added": "13422906061240638",
+         "date_last_used": "0",
+         "date_modified": "13404216267638109",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favourites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [ {
+            "date_added": "13391343500818945",
+            "date_last_used": "0",
+            "guid": "63ec6856-577d-4bdd-9598-346e9b04b929",
+            "id": "19",
+            "name": "UX Pilot - Superfast UX/UI Design with AI",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://uxpilot.ai/a/ui-design?page=zaSJMg3nWqNi9XcIgm4i",
+            "visit_count": 0
+         } ],
+         "date_added": "13422906061240638",
+         "date_last_used": "0",
+         "date_modified": "13391343500818945",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favourites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "workspaces_v2": {
+         "children": [  ],
+         "date_added": "13422906061240638",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "75aa6670-344f-549d-b742-660f029506ab",
+         "id": "5",
+         "name": "Workspaces",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CjEKDgiIgQISCHQ2Z/CZAQAAEgAqGGJnMzM5ZzJ2ZEh5dHVRSWQ1R2xjVlE9PUgDoAYHEq0BCBASqAEKHFV5ZVkwUlJXYWw2VGVIc3h1OEdqVFhYOTdOWT0SJDMwOWYyY2Y1LTAzOTYtNGRkMC1iNGY1LTFkMWNhODk0NDBlZBgAIAAoADCqiaDcjzM475mg3I8zQO+ZoNyPM0oceEFQRkNjeFdsdlh6NnJIKzVJNTZQbit5SXg4PVofIh32dlVQTmZMb2JUVEdhODJFaDRZZ3FCN2RGbmNFPWUiOZg2wj4CYAUSrQEIDxKoAQocU1I2T0YyNDZkWFBpVmNSV3VBNjdPQ2Z4ZDEwPRIkNGY1OWQ3ZjktYmMyYS00ZTAwLTlmNDUtYzA1ZmEwMmVjMzgyGAAgACgAMKuJoNyPMzi9naDcjzNAvZ2g3I8zShxPek44a0s2V056V0d5dGsrM0cwd0JkMG53bW89Wh8iHe1XbDh6dFNPL0Y1NExCdk13bVo3czlHUVlWR0E9ZfckopvCPgJgBRKtAQgOEqgBChxkUnUwN1J1NG52UXVOV1RJZ2dlUzBqWDE4Tm89EiQ1Y2MyNzRkNC03YmE5LTQyNjYtYjM3YS05OTEyYmFiNjU0MDkYACAAKAAwrNuG2ZczOPSdoNyPM0D0naDcjzNKHHNSMDhRUFpzOHhJMlg0RHpRTng3VWZlWnNoRT1aHyId22t0bDhZM2I2N3E0NVEwVkFxaGVsTmFXUjBrYz1leBJlrMI+AmAFEqwBCBMSpwEKHGRZSWJxRGIyQnB1bjk4NGRNbXhHZ05xcXdoVT0SJDYzZWM2ODU2LTU3N2QtNGJkZC05NTk4LTM0NmU5YjA0YjkyORgAIAAoADD+oqDcjzM4uaag3I8zQLmmoNyPM0ocNkNpOE9oUDB1M09ENTROd25pbW9sZFBTcmJNPVoeIhw2M3VGdXI1TURKS1ducjZobEV2TmozWnhJM0k9ZXVipbPCPgJgBRKtAQgLEqgBChxWblJlZjlib0NwczI3SjcyZEhjRTBtenhHekk9EiQwMTcyOWJjZC1lY2MwLTQ3MDctYWIyZi0wMTA2NzYzY2VhYjgYACAAKAAwhtjXxpszOJzb18abM0Cc29fGmzNKHDRqbWFNWHVkWTg5M2lkZzhaZGpRKzNOLzByUT1aHyId6kRaK2g5elZIZlNtSWVieng1a3JyQlZzMkxiUT1l2K+wAsI+AmAFEq0BCBISqAEKHCtDTjJjWGtleTc5c1pHQi81QzU5ZVBWMjJydz0SJDg0YzYxY2ViLTk1ZDAtNGY2Mi1hM2NjLWZmNjJhZTdkNTM5YhgAIAAoADCpiaDcjzM40pmg3I8zQNKZoNyPM0ocU0V4Ym5TRXhNUXNxY1l1eUlhVjF4YUZlRitvPVofIh39eFY5dDQyeWFleHRKMDNqWGpEbzRxUHpEM0lzPWVMtIgewj4CYAUSjgEIARKJAQoceXhKLzZmdmtlY3I3a3A1RVF6QjR0V0xwZGJFPRIkZDVhOGZhOWUtNDA3YS01MmQxLWI2ZWQtMjVkYThkZWRmMzdjGAAgACgAMKycyteDMzj/sMrXgzNA/7DK14MzShxhUkNXTGdoRjliNUlucUtJRHZ1Si9qdlFrRmM9WgBlAAAAAMI+AmAAEo4BCAMSiQEKHG5qZ0R1ODhlQ3J2WHA4NnBEN2ZIR2NxRnA4OD0SJDY0MzExOTM5LTNmN2MtNTEwYS04ZDVkLTk4NmY4MzhmNDFhMBgAIAAoADCynMrXgzM477HK14MzQO+xyteDM0oceXpOQjAxY241NEE3Y1JVMHVUKy9QZ21UdFVvPVoAZQAAAADCPgJgABKtAQgNEqgBChxnb2QwcjJwVWdKb0Z0amlhTnhYRnMzcnY0dUE9EiQ5MzI5ODBiNi05OWQ0LTRhZDAtODk1NC00MjUzZTdlMTA4ODIYACAAKAAwqImg3I8zOLmZoNyPM0C5maDcjzNKHExiU0FOMkJVWmY4RHNNN2xZblJZRzdxQ2hwND1aHyIdty90QVdsSEdTTnNHZnhaYW9LR2lOUFVDN0s4QT1ltkeMLcI+AmAFEq0BCAoSqAEKHFlhRFBPMmRIQ2RqdzBZTmRRK3Yvc2g3MWQzMD0SJGJkMDQ0NGNkLTQ2NDYtNDkwYS1iN2ZhLWRmNWQzZTExNTUxNxgAIAAoADCf/pTVlzM46YmV1ZczQOmJldWXM0ocTStqR1Yxc1ZpNjFTd2twT0EzTWNvODJjTlNZPVofIh3UaDhFVkhPVG42N3BQYTZDSXNTWFpQNXR3Z1o4PWUAAAAAwj4CYAUSrAEIBxKnAQoceTFOVlRTZ0xMWkc4QlhhRnhqUlhLalZvNXNjPRIkOGIyOWM5ODgtZmMxMC00YTI3LWE0ZTUtOTdkZWE3MmI4MDEwGAAgACgAMICjoNyPMzjvpqDcjzNA76ag3I8zShxvbDVHa2RvQ1RFNzRaVWlvSHF5UWhuUVhDWXM9Wh4iHEM2OEEyZE1MTGt3NkJsUFNnR1g5SVRhSkNRQT1lh6cpm8I+AmAFEq0BCAkSqAEKHE9YUnBOZG5keVJwYzVtRW9HSVF4NFNFTklNST0SJDFmNzUyMTU2LWVkNmItNDI5Ny05MjBmLWJhMzQ1NGUyN2QzNRgAIAAoADD9oqDcjzM4oKag3I8zQKCmoNyPM0ocSk15UG9nWmFHMzFadEpCc1V3RTdOWUI1R3VzPVofIh2pSWdUZm5RQ045OWVqM3RTV2cvUHNCeDUvWG5zPWXXkT05wj4CYAUSrAEICBKnAQocWWwzT01sM01sM1F3VnZrSHVad2ZxWlFxMUx3PRIkNDBkZGNmZDEtYWI1Yy00NjBiLWIzZjAtY2RhZWZjNTliNDFhGAAgACgAMP+ioNyPMzjUpqDcjzNA1Kag3I8zShw2azhDdVc0SnVyOTBuSmpwZjd0aCtxc29RYWc9Wh4iHFNsWnFSTFp3cVpzUjRXN1pTQ3RuZGRsVnhZUT1l15E9OcI+AmAFEqwBCAwSpwEKHGtjWFhlamJ0TjN2djAxSXF3RFZzVkVrNWg4Zz0SJGNjZWNiY2U2LTc5MjItNDEwNi1iMWZkLWU4NmVhMTVlY2Y0YxgAIAAoADDFu5uYnDM47OWQ2YUzQOzlkNmFM0ocWGdrMXE2NE80bEZtOEpoNlM1elpLNFB2RU9FPVoeIhxuMnpDMi9pVFJDZ29OYmxoTUFzT3orUCswNjg9ZYenKZvCPgJgBRKOAQgCEokBChxZY1NUb252RVNQd3FDczRMMmNyVmh2NjhMOTg9EiRhZTdkNWExOS0yMjliLTVjMzYtYmMyNC1lMjM5YWU2MmJjNDEYACAAKAAwrZzK14MzOKWxyteDM0ClscrXgzNKHG9QVmtod0JSYlY2NUtDV1IyK0lPTkhXb091OD1aAGUAAAAAwj4CYAASrQEIERKoAQocd3VlelBDWDZQVXRvdm0rcUFsODZpUENhVndVPRIkYTdjYzUyZWItN2M5Ny00YmQ3LTkxNzYtZDNhYjYzNmYxZTNiGAAgACgAMPPsnIOfMzjZnaDcjzNA2Z2g3I8zShxwRk9Kclo1bjlDbjN4c3IwQzBUN0I2d25haDQ9Wh8iHft6RTFQd05aRS9DM2tlait2VTM1eUJuakVxN009ZUP4bYDCPgJgBRKOAQgFEokBChx3UkJyWkwrNlBBOWF2S2dqTlA3SlhETGNmdnM9EiQ4ZDI4NDQyNS1mOWZiLTU3NjQtYWEyMi02MGU3OWY5MzJiOGIYACAAKAAw1N351JczOIXf+dSXM0CF3/nUlzNKHG5teDY1c1FEdnhJOFRnRWV2K0ErbnR0b1NuND1aAGUAAAAAwj4CYAAwADgA",
+   "version": 1
+}

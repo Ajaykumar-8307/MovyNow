@@ -1,0 +1,119 @@
+<app-navbar></app-navbar>
+
+<main class="home-shell">
+  @if (hasError) {
+    <section class="status-panel">
+      <span class="material-symbols-outlined">wifi_off</span>
+      <h1>MovyNow could not load titles right now.</h1>
+      <p>Check the connection and refresh to bring the shelves back.</p>
+    </section>
+  } @else {
+    <app-hero-section [movies]="heroMovies"></app-hero-section>
+
+    <section class="quick-lanes" aria-label="Browse by mood">
+      <div class="lane-copy">
+        <span>Browse</span>
+        <h2>Find something fast</h2>
+      </div>
+      <div class="genre-chips">
+        @for (genre of genres; track genre.id) {
+          <button
+            type="button"
+            [class.active]="genre.id === selectedGenreId"
+            (click)="selectGenre(genre.id)"
+          >
+            {{ genre.label }}
+          </button>
+        }
+      </div>
+    </section>
+
+    @if (searchQuery) {
+      <app-see-movies
+        [title]="'Search results for &quot;' + searchQuery + '&quot;'"
+        [subtitle]="searchSubtitle"
+        [movies]="searchResults"
+        emptyText="No matching titles found. Try a different search."
+      ></app-see-movies>
+    }
+
+    @if (selectedGenreId) {
+      <app-see-movies
+        [title]="selectedGenreLabel + ' picks'"
+        subtitle="Filtered from the global movie catalogue"
+        [movies]="genreMovies"
+      ></app-see-movies>
+    }
+
+    @if (watchlist.items().length) {
+      <app-see-movies
+        title="Your watchlist"
+        subtitle="Saved on this device"
+        [movies]="watchlist.items()"
+        emptyText="Save titles with the plus button to build your shelf."
+      ></app-see-movies>
+    }
+
+    @if (continueWatchingMovies.length) {
+      <app-see-movies
+        title="Continue watching"
+        subtitle="Resume where you left off"
+        [movies]="continueWatchingMovies"
+      ></app-see-movies>
+    }
+
+    <app-see-movies
+      title="Top 10 in India today"
+      subtitle="Big titles with the strongest current demand"
+      [movies]="indianMovies.slice(0, 10)"
+      [ranked]="true"
+    ></app-see-movies>
+
+    <app-see-movies
+      title="Fresh releases"
+      subtitle="New and now playing"
+      [movies]="nowPlayingMovies"
+    ></app-see-movies>
+
+    <section class="live-zone" [class.highlight]="activeShelf === 'sports'">
+      <div class="live-header">
+        <span class="live-kicker">Sports hub</span>
+        <h2>Live-style match centers</h2>
+      </div>
+      <div class="live-grid">
+        @for (tile of liveTiles; track tile.title) {
+          <button class="live-tile" type="button">
+            <span class="material-symbols-outlined">{{ tile.icon }}</span>
+            <strong>{{ tile.title }}</strong>
+            <small>{{ tile.meta }}</small>
+          </button>
+        }
+      </div>
+    </section>
+
+    <app-see-movies
+      title="Trending now"
+      subtitle="What everyone is watching"
+      [movies]="trendingMovies"
+    ></app-see-movies>
+
+    <app-see-movies
+      title="Blockbuster movies"
+      subtitle="High-energy crowd favourites"
+      [movies]="popularMovies"
+    ></app-see-movies>
+
+    <app-see-movies
+      title="Critically loved"
+      subtitle="Highly rated stories worth settling in for"
+      [movies]="topRatedMovies"
+    ></app-see-movies>
+
+    @if (isLoading) {
+      <section class="status-panel loading-panel">
+        <div class="loader"></div>
+        <h1>Preparing your watch shelves</h1>
+      </section>
+    }
+  }
+</main>

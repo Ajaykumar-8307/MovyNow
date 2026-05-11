@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Playground</title>
+  <link rel="stylesheet" href="sidepanel.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div id="python-ide-container" class="app-container">
+    <!-- Header removed -->
+
+    <!-- Main content area -->
+    <main class="main-content">
+      <!-- File explorer sidebar -->
+      <aside class="file-explorer">
+        <div class="file-explorer-header">
+          <h2 class="sidebar-title">Files</h2>
+          <div class="file-actions">
+            <!-- New File button with tooltip -->
+            <button id="new-file" class="icon-button">
+              <i class="fas fa-plus"></i>
+            </button>
+            <input type="file" id="upload-file" style="display:none" multiple>
+            <!-- Upload File button with tooltip -->
+            <button id="upload-file-btn" class="icon-button">
+              <i class="fas fa-upload"></i>
+            </button>
+            <!-- Toggle Sidebar button with tooltip -->
+            <button id="toggle-sidebar" class="icon-button">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="files-container">
+          <!-- Python files section -->
+          <div class="files-section">
+            <div class="section-header">
+              <h3>Python Files</h3>
+            </div>
+            <select id="file-selector" class="hidden-select"></select>
+            <ul id="file-list" class="file-list"></ul>
+          </div>
+          
+          <!-- Uploaded files section -->
+          <div id="uploaded-files-container" class="files-section">
+            <div class="section-header">
+              <h3>Uploaded Files</h3>
+            </div>
+            <ul id="uploaded-files" class="file-list"></ul>
+          </div>
+        </div>
+        <!-- Rate Us section -->
+        <div class="rate-us">
+          <span class="rate-us-text">Rate us:</span>
+          <div class="rating-stars">
+            <div class="rating-group">
+              <input name="fst" value="5" type="radio" disabled checked />
+              <label for="fst-1">
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScSW0C3PBqdS1-xc9haytwCpu_7L3o2Kh2WyAF1PEHfnkQtHQ/viewform"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path
+                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                    />
+                  </svg>
+                </a>
+              </label>
+              <input name="fst" id="fst-1" value="1" type="radio" />
+              <label for="fst-2">
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScSW0C3PBqdS1-xc9haytwCpu_7L3o2Kh2WyAF1PEHfnkQtHQ/viewform"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path
+                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                    />
+                  </svg>
+                </a>
+              </label>
+              <input name="fst" id="fst-2" value="2" type="radio" />
+              <label for="fst-3">
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScSW0C3PBqdS1-xc9haytwCpu_7L3o2Kh2WyAF1PEHfnkQtHQ/viewform"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path
+                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                    />
+                  </svg>
+                </a>
+              </label>
+              <input name="fst" id="fst-3" value="3" type="radio" />
+              <label for="fst-4">
+                <a
+                  href="https://chromewebstore.google.com/detail/python-playground/jfippgilnpggpddhmfjaaecadnfhcopa/reviews"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path
+                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                    />
+                  </svg>
+                </a>
+              </label>
+              <input name="fst" id="fst-4" value="4" type="radio" />
+              <label for="fst-5">
+                <a
+                  href="https://chromewebstore.google.com/detail/python-playground/jfippgilnpggpddhmfjaaecadnfhcopa/reviews"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path
+                      d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                    />
+                  </svg>
+                </a>
+              </label>
+              <input name="fst" id="fst-5" value="5" type="radio" />
+            </div>
+          </div>
+        </div>
+        <!-- Product info section -->
+        <div class="product-info">
+          <div class="product-logo">
+            <i class="fab fa-python"></i>
+          </div>
+          <div class="product-details">
+            <span class="product-name">Python Playground</span>
+            <span class="python-version">Python 3.12.7</span>
+            <div class="product-links">
+              <a href="https://python-playground.com/help" target="_blank" rel="noopener" class="help-link">Help</a>
+              <span class="link-separator"> | </span>
+              <a href="https://python-playground.com/privacy-policy" target="_blank" rel="noopener" class="privacy-link">Privacy</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <div
+        id="sidebar-separator"
+        class="resizer resizer-vertical"
+        role="separator"
+        aria-orientation="vertical"
+        aria-label="Resize sidebar"
+      >
+        <div class="resizer-handle"></div>
+      </div>
+
+      <!-- Editor and output area -->
+      <div class="editor-container">
+        <div class="editor-header">
+          <div class="editor-top-row">
+            <div class="current-file">
+              <span id="current-filename">main.py</span>
+            </div>
+            <div class="editor-actions">
+              <!-- Debug button with tooltip -->
+              <button id="debug" class="icon-button" aria-label="Start Debugging" hidden>
+                <i class="fas fa-bug"></i>
+              </button>
+              <!-- Manage Packages button with tooltip -->
+              <button id="manage-packages" class="icon-button" aria-label="Install packages from PyPI">
+                <i class="fas fa-box"></i>
+              </button>
+              <!-- Theme toggle with tooltip -->
+              <div class="theme-toggle" id="theme-toggle-box">
+                <input type="checkbox" id="theme-toggle-checkbox">
+                <label for="theme-toggle-checkbox" class="theme-toggle-label">
+                  <div class="toggle-icon toggle-dark">
+                    <i class="fas fa-moon"></i>
+                  </div>
+                  <div class="toggle-slider">
+                    <div class="toggle-ball"></div>
+                  </div>
+                  <div class="toggle-icon toggle-light">
+                    <i class="fas fa-sun"></i>
+                  </div>
+                </label>
+              </div>
+              <!-- Run button with tooltip -->
+              <div class="run-button">
+                <button id="run" class="primary-button" aria-label="Run Code">
+                  <i class="fas fa-play" aria-hidden="true"></i>
+                  <span class="run-spinner" aria-hidden="true"></span>
+                  <p class="run-label">Run</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="editor-output">
+          <div id="editor" class="code-editor"></div>
+          <div id="separator" class="resizer">
+            <div class="resizer-handle"></div>
+          </div>
+          <div class="output-container">
+            <div class="output-header">
+              <div class="output-title">
+                <div class="output-tabs">
+                  <button id="tab-output" class="output-tab active" type="button">Output</button>
+                  <button id="tab-variables" class="output-tab" type="button">Variables</button>
+                </div>
+              </div>
+              <div class="output-actions">
+                <div id="debug-controls">
+                  <button id="dbg-continue" class="icon-button" aria-label="continue">
+                    <i class="fas fa-play"></i>
+                  </button>
+                  <button id="dbg-step-over" class="icon-button" aria-label="Step Over">
+                    <i class="fas fa-arrow-right"></i>
+                  </button>
+                  <button id="dbg-step-into" class="icon-button" aria-label="Step Into">
+                    <i class="fas fa-turn-down"></i>
+                  </button>
+                  <button id="dbg-step-out" class="icon-button" aria-label="Step Out">
+                    <i class="fas fa-turn-up"></i>
+                  </button>
+                  <button id="dbg-stop" class="icon-button" aria-label="Stop Debugging">
+                    <i class="fas fa-stop"></i>
+                  </button>
+                  <button id="dbg-restart" class="icon-button" aria-label="Restart Debugging">
+                    <i class="fas fa-arrows-rotate"></i>
+                  </button>
+                </div>
+                <!-- Copy Output button with tooltip -->
+                <button id="copy-output" class="icon-button">
+                  <i class="fas fa-copy"></i>
+                </button>
+                <!-- Clear Output button with tooltip -->
+                <button id="clear-output" class="icon-button">
+                  <i class="fas fa-eraser"></i>
+                </button>
+              </div>
+            </div>
+            <pre id="output" class="output-panel"></pre>
+            <pre id="variables" class="output-panel"></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="debug-overlay" class="overlay" aria-hidden="true">
+    <div class="modal-card debug-overlay-card" role="status" aria-live="polite">
+      <div class="debug-overlay-spinner" aria-hidden="true"></div>
+        <h3>Preparing Debugger</h3>
+        <p>Setting up the debug environment...</p>
+    </div>
+  </div>
+  
+  <!-- Modal dialog -->
+  <div id="modal-backdrop" class="overlay">
+    <div id="modal" class="modal-card">
+      <div id="modal-content"></div>
+      <div id="modal-actions"></div>
+    </div>
+  </div>
+
+  <script src="codemirror/codemirror.bundle.js"></script>
+  <script type="module" src="sidepanel.js"></script>
+</body>
+</html>

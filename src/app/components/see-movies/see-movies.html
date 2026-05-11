@@ -1,0 +1,65 @@
+<section class="watchlist-section">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">{{ title }}</h2>
+      @if (subtitle) {
+        <p class="section-subtitle">{{ subtitle }}</p>
+      }
+    </div>
+
+    @if (movies.length > 4) {
+      <div class="rail-actions" aria-label="Shelf controls">
+        <button type="button" class="nav-arrow" title="Scroll left" aria-label="Scroll left" (click)="scrollRail(-1)">
+          <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <button type="button" class="nav-arrow" title="Scroll right" aria-label="Scroll right" (click)="scrollRail(1)">
+          <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+      </div>
+    }
+  </div>
+
+  <div class="cards-container" #rail>
+    @for (item of movies; track item.id; let index = $index) {
+      <a class="card" [routerLink]="['/movie', item.id]">
+        @if (ranked) {
+          <span class="rank-badge">{{ index + 1 }}</span>
+        }
+
+        @if (item.poster_path) {
+          <img
+            [src]="movieService.posterUrl(item.poster_path)"
+            [alt]="item.title"
+            class="card-img"
+            loading="lazy"
+            (error)="markPosterMissing(item)"
+          />
+        } @else {
+          <div class="poster-fallback">
+            <span>{{ item.title }}</span>
+          </div>
+        }
+
+        <button
+          type="button"
+          class="save-button"
+          [class.saved]="watchlist.has(item.id)"
+          [attr.aria-label]="watchlist.has(item.id) ? 'Remove from watchlist' : 'Add to watchlist'"
+          [title]="watchlist.has(item.id) ? 'Remove from watchlist' : 'Add to watchlist'"
+          (click)="toggleWatchlist($event, item)"
+        >
+          <span class="material-symbols-outlined">{{ watchlist.has(item.id) ? 'check' : 'add' }}</span>
+        </button>
+
+        <div class="card-overlay">
+          <span class="card-title">{{ item.title }}</span>
+          <span class="card-meta">
+            {{ movieService.yearFromDate(item.release_date) }} · {{ movieService.formatRating(item.vote_average) }}
+          </span>
+        </div>
+      </a>
+    } @empty {
+      <div class="empty-state">{{ emptyText }}</div>
+    }
+  </div>
+</section>

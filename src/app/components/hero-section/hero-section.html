@@ -1,0 +1,77 @@
+@if (featuredMovie; as movie) {
+  <section
+    class="hero-container"
+    [style.backgroundImage]="
+      'linear-gradient(90deg, rgba(15, 16, 20, 1) 0%, rgba(15, 16, 20, 0.8) 35%, rgba(15, 16, 20, 0.1) 75%), linear-gradient(0deg, rgba(15, 16, 20, 1) 0%, rgba(15, 16, 20, 0) 25%), url(' +
+      movieService.backdropUrl(movie.backdrop_path) +
+      ')'
+    "
+  >
+    <div class="hero-content">
+      <div class="eyebrow">
+        <span class="live-dot"></span>
+        Trending on MovyNow
+      </div>
+
+      <h1 class="movie-title">{{ movie.title }}</h1>
+
+      <div class="metadata-row">
+        <span>{{ movieService.yearFromDate(movie.release_date) }}</span>
+        <span class="rating-chip">{{ movieService.formatRating(movie.vote_average) }} IMDb</span>
+        <span>4K</span>
+        <span>Dolby Audio</span>
+      </div>
+
+      <p class="description">{{ movie.overview || 'Premium entertainment curated for your next watch.' }}</p>
+
+      <div class="action-row">
+        <a class="btn-play" [routerLink]="['/movie', movie.id]">
+          <span class="material-symbols-outlined">play_arrow</span>
+          Watch now
+        </a>
+        <button
+          class="btn-secondary"
+          type="button"
+          [class.saved]="watchlist.has(movie.id)"
+          (click)="toggleWatchlist($event, movie)"
+        >
+          <span class="material-symbols-outlined">{{ watchlist.has(movie.id) ? 'check' : 'add' }}</span>
+          {{ watchlist.has(movie.id) ? 'Saved' : 'Watchlist' }}
+        </button>
+        <a class="btn-icon" [routerLink]="['/movie', movie.id]" title="More details" aria-label="More details">
+          <span class="material-symbols-outlined">info</span>
+        </a>
+      </div>
+    </div>
+
+    <aside class="hero-panel" aria-label="Featured title details">
+      <div class="panel-title">Premiere Night</div>
+      <div class="panel-copy">Top picks, blockbusters, and originals refreshed daily.</div>
+      <button class="panel-control" type="button" (click)="nextMovie()">
+        <span class="material-symbols-outlined">skip_next</span>
+        Next spotlight
+      </button>
+    </aside>
+
+    <div class="carousel-indicators" aria-label="Featured movies">
+      @for (item of movies.slice(0, 6); track item.id; let index = $index) {
+        <button
+          type="button"
+          class="dot"
+          [class.active]="index === activeIndex"
+          [attr.aria-label]="'Show ' + item.title"
+          (click)="setActive(index)"
+        ></button>
+      }
+    </div>
+  </section>
+} @else {
+  <section class="hero-container hero-skeleton">
+    <div class="hero-content">
+      <div class="skeleton-line short"></div>
+      <div class="skeleton-line title"></div>
+      <div class="skeleton-line"></div>
+      <div class="skeleton-line medium"></div>
+    </div>
+  </section>
+}

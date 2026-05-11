@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-color: #0f1014;
+  --surface: #16181f;
+  --surface-raised: #272a33;
+  --text-primary: #ffffff;
+  --text-secondary: #8f98b0;
+  --text-muted: #5e6475;
+  --accent-primary: #1f80e0;
+  --accent-primary-hover: #0052cc;
+  --accent-gold: #ffcc00;
+  --font-main: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  --sidebar-width-collapsed: 96px;
+  --sidebar-width-expanded: 260px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+.material-symbols-outlined {
+  line-height: 1;
+}
+
+/* Premium Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-raised);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

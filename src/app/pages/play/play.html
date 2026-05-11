@@ -1,0 +1,97 @@
+<main class="player-page">
+  <header class="player-header">
+    <a class="back-button" routerLink="/home" aria-label="Back to home">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </a>
+    <div class="title-stack">
+      <span>Now playing</span>
+      <strong>{{ movie?.title || 'MovyNow Player' }}</strong>
+    </div>
+  </header>
+
+  <section class="player-shell">
+    @if (safeVideoUrl) {
+      <iframe
+        [src]="safeVideoUrl"
+        title="Movie stream player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    } @else if (directStreamUrl) {
+      <video
+        controls
+        autoplay
+        playsinline
+        [src]="directStreamUrl"
+        (timeupdate)="onVideoTimeUpdate($event)"
+      ></video>
+    } @else if (hasError) {
+      <div class="player-state">
+        <span class="material-symbols-outlined">error</span>
+        <h1>Player unavailable</h1>
+        <p>We could not resolve a playable stream from VidAPI right now.</p>
+        <button type="button" class="retry-button" (click)="retryPlayback()">Retry playback</button>
+      </div>
+    } @else if (!isLoading) {
+      <div class="player-state">
+        <span class="material-symbols-outlined">movie</span>
+        <h1>No stream found</h1>
+        <p>This title exists in the catalogue, but no online source is available yet.</p>
+      </div>
+    } @else {
+      <div class="player-state">
+        <div class="loader"></div>
+        <h1>Starting player</h1>
+      </div>
+    }
+
+    <!-- <div class="control-strip" aria-label="Player controls">
+      <button type="button" title="Back 10 seconds" aria-label="Back 10 seconds">
+        <span class="material-symbols-outlined">replay_10</span>
+      </button>
+      <button type="button" class="primary-control" title="Play or pause" aria-label="Play or pause">
+        <span class="material-symbols-outlined">pause</span>
+      </button>
+      <button type="button" title="Forward 10 seconds" aria-label="Forward 10 seconds">
+        <span class="material-symbols-outlined">forward_10</span>
+      </button>
+      <div class="progress-track">
+        <span></span>
+      </div>
+      <button type="button" title="Subtitles" aria-label="Subtitles">
+        <span class="material-symbols-outlined">subtitles</span>
+      </button>
+      <button type="button" title="Fullscreen" aria-label="Fullscreen">
+        <span class="material-symbols-outlined">fullscreen</span>
+      </button>
+    </div> -->
+  </section>
+
+  @if (movie; as movie) {
+    <section class="player-details">
+      <div>
+        <span class="kicker">Now streaming</span>
+        <h1>{{ movie.title }}</h1>
+        <p>{{ movie.overview }}</p>
+        @if (streamMeta; as stream) {
+          <div class="stream-badges">
+            <span>{{ stream.sourceName }}</span>
+            @if (stream.quality) {
+              <span>{{ stream.quality }}</span>
+            }
+            @if (stream.subtitles.length) {
+              <span>{{ stream.subtitles.length }} subtitle tracks</span>
+            }
+          </div>
+        }
+      </div>
+      <a class="details-link" [routerLink]="['/movie', movie.id]">View details</a>
+    </section>
+
+    <app-see-movies
+      title="Up next"
+      subtitle="Keep watching with related picks"
+      [movies]="movie.recommendations.results.slice(0, 12)"
+    ></app-see-movies>
+  }
+</main>

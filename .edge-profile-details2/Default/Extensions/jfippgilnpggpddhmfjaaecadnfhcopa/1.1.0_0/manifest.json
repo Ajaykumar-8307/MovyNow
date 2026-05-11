@@ -1,0 +1,47 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icons/icon128.png",
+         "16": "icons/icon16.png",
+         "48": "icons/icon48.png",
+         "64": "icons/icon64.png",
+         "96": "icons/icon96.png"
+      }
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_security_policy": {
+      "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+   },
+   "cross_origin_embedder_policy": {
+      "value": "require-corp"
+   },
+   "cross_origin_opener_policy": {
+      "value": "same-origin"
+   },
+   "default_locale": "en",
+   "description": "__MSG_shortDesc__",
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "icons/icon128.png",
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "64": "icons/icon64.png",
+      "96": "icons/icon96.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtcf0l0w71QTcB/e7s7LWGprmiuyJk9bC5u9rxIFtzg4vROUXltCudFRNqbt/Nw9r5fZcKTmC/FRI9iQsx/GgUthV7J+KLoV+hf7bivoJKO8jxzvDUeSuCyR0oq1MA3rlLOSNuZ5H08veNyti30JhXEtGaUuqWZA187DGQqq3qAHZ7rB7rfjfjtTHlQNXlKGkAdcFBUmq0aksiElMO4PjCpzRgwOINskZZdZv9IZCV5S4stra+AvmzyFRUFNcg2c4cfJFpeK29Yo8Vl+KlbSQD3GX+10IRuqS5fp6UO9Jrxtdh+AI7Xc3Ff7S9Rg7w9AX55TnqsJ+x5m3jfyWY9B4HQIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_appName__",
+   "permissions": [ "sidePanel", "storage" ],
+   "side_panel": {
+      "default_path": "sidepanel.html",
+      "default_width": 1200
+   },
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.1.0",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "pyodide/pyodide.js", "pyodide/**", "libs/plotly-3.0.1.min.js" ]
+   } ]
+}

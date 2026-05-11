@@ -1,0 +1,111 @@
+<app-navbar></app-navbar>
+
+<main class="details-wrapper">
+  @if (movie; as movie) {
+    <div
+      class="backdrop-container"
+      [style.backgroundImage]="'url(' + movieService.backdropUrl(movie.backdrop_path || movie.poster_path) + ')'"
+    >
+      <div class="backdrop-gradient"></div>
+    </div>
+
+    <section class="content-container">
+      <div class="poster-column">
+        @if (movie.poster_path) {
+          <img
+            [src]="movieService.posterUrl(movie.poster_path)"
+            [alt]="movie.title + ' poster'"
+            class="movie-poster"
+          />
+        }
+      </div>
+
+      <div class="info-column">
+        <span class="detail-kicker">MovyNow feature</span>
+        <h1 class="movie-title">{{ movie.title }}</h1>
+
+        <div class="meta-row">
+          <span>{{ movieService.yearFromDate(movie.release_date) }}</span>
+          <span>{{ movieService.formatRuntime(movie.runtime) }}</span>
+          <span class="rating">{{ movieService.formatRating(movie.vote_average) }} IMDb</span>
+          <span>4K</span>
+        </div>
+
+        <div class="genres-row">
+          @for (genre of movie.genres; track genre.id) {
+            <span class="genre-pill">{{ genre.name }}</span>
+          }
+        </div>
+
+        <p class="tagline">{{ movie.tagline }}</p>
+        <p class="synopsis-text">{{ movie.overview }}</p>
+
+        <div class="actions-row">
+          @if (movie.imdb_id) {
+            <a class="btn-primary" [routerLink]="['/play', movie.imdb_id]">
+              <span class="material-symbols-outlined">play_arrow</span>
+              Watch now
+            </a>
+          } @else {
+            <button class="btn-primary" type="button" disabled>
+              <span class="material-symbols-outlined">play_arrow</span>
+              Stream unavailable
+            </button>
+          }
+          <button
+            class="btn-secondary"
+            type="button"
+            [class.saved]="watchlist.has(movie.id)"
+            (click)="toggleWatchlist(movie)"
+          >
+            <span class="material-symbols-outlined">{{ watchlist.has(movie.id) ? 'check' : 'add' }}</span>
+            {{ watchlist.has(movie.id) ? 'Saved' : 'Watchlist' }}
+          </button>
+          <button class="btn-icon" type="button" title="Share" aria-label="Share">
+            <span class="material-symbols-outlined">share</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cast-section">
+      <div class="section-heading">
+        <span>People</span>
+        <h2>Cast and crew</h2>
+      </div>
+      <div class="cast-container">
+        @for (actor of topCast; track actor.id) {
+          <article class="cast-card">
+            <img
+              [src]="movieService.imageUrl(actor.profile_path, 'w185')"
+              [alt]="actor.name"
+              class="cast-avatar"
+              loading="lazy"
+            />
+            <div class="cast-info">
+              <span class="cast-name">{{ actor.name }}</span>
+              <span class="cast-role">{{ actor.character || 'Cast' }}</span>
+            </div>
+          </article>
+        }
+      </div>
+    </section>
+
+    <app-see-movies
+      title="More like this"
+      subtitle="Because this title caught your eye"
+      [movies]="recommendations"
+    ></app-see-movies>
+  } @else if (hasError) {
+    <section class="status-panel">
+      <span class="material-symbols-outlined">error</span>
+      <h1>We could not load this title.</h1>
+      <a routerLink="/home">Back to home</a>
+    </section>
+  } @else if (isLoading) {
+    <section class="status-panel">
+      <div class="loader"></div>
+      <h1>Loading title details</h1>
+    </section>
+  }
+</main>

@@ -1,0 +1,5 @@
+2026/05/10-22:31:07.296 5a00 Creating DB C:\Users\AJAY KUMAR\Documents\My Web Sites\MovyNow\MovyNow\.edge-profile-details\Default\EdgeCoupons/coupons_data.db since it was missing.
+2026/05/10-22:31:07.355 5a00 Reusing MANIFEST C:\Users\AJAY KUMAR\Documents\My Web Sites\MovyNow\MovyNow\.edge-profile-details\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/05/10-22:31:13.822 5dd8 Level-0 table #5: started
+2026/05/10-22:31:13.831 5dd8 Level-0 table #5: 682156 bytes OK
+2026/05/10-22:31:13.838 5dd8 Delete type=0 #3

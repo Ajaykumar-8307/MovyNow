@@ -1,0 +1,54 @@
+<nav class="sidebar" aria-label="Primary navigation" [class.expanded]="isExpanded" (mouseenter)="isExpanded = true" (mouseleave)="isExpanded = false">
+  <a class="brand-logo" routerLink="/home" aria-label="MovyNow home">
+    <span class="brand-mark">M</span>
+    <span class="brand-copy">
+      <span class="brand-name">Subscribe</span>
+      <span class="brand-plan">&#8250;</span>
+    </span>
+  </a>
+
+  <div class="nav-links-container">
+    <button class="nav-item profile-action" type="button" title="My Space">
+      <span class="material-symbols-outlined">person</span>
+      <span class="nav-label">My Space</span>
+    </button>
+    <a class="nav-item search-action" (click)="toggleSearch()" title="Search">
+      <span class="material-symbols-outlined">search</span>
+      <span class="nav-label">Search</span>
+    </a>
+    
+    @for (item of navItems; track item.label) {
+      <a
+        class="nav-item"
+        [routerLink]="item.link"
+        [queryParams]="item.queryParams"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: item.label === 'Home' }"
+        [title]="item.label"
+      >
+        <span class="material-symbols-outlined">{{ getIconFor(item.label) }}</span>
+        <span class="nav-label">{{ item.label }}</span>
+      </a>
+    }
+  </div>
+</nav>
+
+@if (isSearchOpen) {
+  <div class="search-overlay">
+    <form class="search-box" role="search" (ngSubmit)="submitSearch()">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input
+        #searchInput
+        name="searchTerm"
+        type="search"
+        [(ngModel)]="searchTerm"
+        (ngModelChange)="onSearchInput($event)"
+        placeholder="Movies, shows and more"
+        aria-label="Search movies, shows, sports"
+      />
+      <button class="icon-button" type="button" (click)="toggleSearch()">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </form>
+  </div>
+}

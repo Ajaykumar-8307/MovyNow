@@ -1,0 +1,316 @@
+@import '../counter/counter.css';
+@import '../overlay/index.overlay.css';
+@import '../components/Button/button.css';
+@import '../components/Popup/popup.css';
+@import '../components/Tabs/tab.css';
+
+/* metropolis-latin-400-normal */
+/* @font-face {
+	font-family: 'Metropolis';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 400;
+	src:
+		url(../../assets/fonts/metropolis-latin-400-normal.woff2) format('woff2'),
+		url(../../assets/fonts/metropolis-latin-400-normal.woff) format('woff');
+} */
+
+/* metropolis-latin-500-normal */
+/* @font-face {
+	font-family: 'Metropolis';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 500;
+	src:
+		url(../../assets/fonts/metropolis-latin-500-normal.woff2) format('woff2'),
+		url(../../assets/fonts/metropolis-latin-500-normal.woff) format('woff');
+} */
+
+/* metropolis-latin-600-normal */
+/* @font-face {
+	font-family: 'Metropolis';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 600;
+	src:
+		url(../../assets/fonts/metropolis-latin-600-normal.woff2) format('woff2'),
+		url(../../assets/fonts/metropolis-latin-600-normal.woff) format('woff');
+} */
+
+/* metropolis-latin-700-normal */
+/* @font-face {
+	font-family: 'Metropolis';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 700;
+	src:
+		url(../../assets/fonts/metropolis-latin-700-normal.woff2) format('woff2'),
+		url(../../assets/fonts/metropolis-latin-700-normal.woff) format('woff');
+} */
+
+:host {
+	all: initial;
+	font-family: Metropolis, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	font-family: Metropolis, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* a {
+	font-weight: 500;
+	color: #646cff;
+	text-decoration: inherit;
+}
+a:hover {
+	color: #535bf2;
+} */
+
+body {
+	margin: 0;
+	display: flex;
+}
+
+h1 {
+	font-size: 3.2em;
+	line-height: 1.1;
+}
+
+.card {
+	padding: 2em;
+}
+
+#app {
+	max-width: 1280px;
+	max-height: 576px;
+	margin: 0;
+	background-color: white;
+}
+
+.something {
+	font-size: 33px;
+	background: yellowgreen;
+	border: 2px solid black;
+	padding: 10px;
+}
+
+/* .something-counter {
+	font-size: 33px;
+	background: red;
+	border: 2px solid black;
+	padding: 10px;
+} */
+
+#chart-container {
+	width: 100%;
+	height: 400px !important;
+	border-radius: 16px;
+	z-index: 0;
+	clip-path: none;
+}
+
+/* Needed for firefox  */
+clipPath rect {
+	width: 100% !important;
+}
+
+/* Needed for firefox  */
+.highcharts-series-group .highcharts-markers {
+	clip-path: none !important;
+}
+
+.image-card-skeleton {
+	width: 88px;
+	height: 88px;
+	transition: transform 0.3s ease;
+	transform: scale(1);
+}
+
+.image-card-skeleton--active {
+	transform: scale(1.27);
+	opacity: 1;
+}
+
+.hk-c-progress__inner-sc {
+	background:
+		linear-gradient(
+			135deg,
+			hsla(0, 0%, 100%, 0.2) 25%,
+			transparent 0,
+			transparent 50%,
+			hsla(0, 0%, 100%, 0.2) 0,
+			hsla(0, 0%, 100%, 0.2) 75%,
+			transparent 0,
+			transparent 0
+		),
+		#4f46e5;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	background-size: 50px 50px;
+	transition: width 0.3s ease-out;
+	animation: hk-progress-move 3s linear both infinite;
+}
+
+.hk-c-progress__inner-sc.indeterminate {
+	width: 100%;
+	height: 100%;
+	background:
+		linear-gradient(
+			135deg,
+			hsla(0, 0%, 100%, 0.2) 25%,
+			transparent 0,
+			transparent 50%,
+			hsla(0, 0%, 100%, 0.2) 0,
+			hsla(0, 0%, 100%, 0.2) 75%,
+			transparent 0,
+			transparent 0
+		),
+		#4f46e5;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	background-size: 50px 50px;
+	animation: indeterminate 1s infinite linear;
+	transform-origin: 0% 50%;
+}
+@keyframes hk-progress-move {
+	0% {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100px 0;
+	}
+}
+@keyframes indeterminate {
+	0% {
+		transform: translateX(0) scaleX(0);
+	}
+	40% {
+		transform: translateX(0) scaleX(0.4);
+	}
+	100% {
+		transform: translateX(100%) scaleX(0.5);
+	}
+}
+
+.hk-taost-bg-gradient {
+	background: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 135.31%);
+}
+
+.hk-ext-animated {
+	animation-duration: 0.3s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: both;
+}
+
+.hk-ext-slideInDown {
+	animation-name: hk-ext-slideInDown;
+}
+
+.hk-ext-slideInUp {
+	animation-name: hk-ext-slideInUp;
+}
+
+@keyframes hk-ext-slideInDown {
+	0% {
+		transform: translateY(-100%);
+		visibility: visible;
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+@keyframes hk-ext-slideInUp {
+	0% {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-100%);
+		visibility: visible;
+	}
+}
+
+.modal-chart-container > .layercake-container {
+	position: relative;
+	height: 200px;
+}
+
+.chart-point {
+	stroke: inherit; /* will use stroke from points prop */
+}
+
+.scroll-hide::-webkit-scrollbar {
+	display: none;
+}
+
+.scroll-hide {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.hk-cube {
+	display: grid;
+}
+
+.hk-face {
+	grid-area: 1 / 1;
+	width: 100%;
+	backface-visibility: hidden;
+}
+
+/* The Front Face starts at 0deg */
+.hk-front {
+	transform: rotateX(0deg);
+	z-index: 2;
+}
+
+/* The back is rotated for both axes */
+.hk-back {
+	transform: rotateX(180deg);
+}
+
+/* Flip along X-axis */
+.hk-flipped-x {
+	transform: rotateX(180deg);
+}
+
+/* Flip along Y-axis */
+.hk-flipped-y {
+	transform: rotateY(180deg);
+}
+
+/* If you want different back-face rotation per axis */
+.hk-flipped-y .hk-back {
+	transform: rotateY(180deg);
+}
+
+span {
+	display: inline-block;
+}
+
+ul {
+	margin-left: 8px;
+}
+
+.textarea-resize {
+	field-sizing: content;
+	max-height: calc(1.5em * 5);
+}

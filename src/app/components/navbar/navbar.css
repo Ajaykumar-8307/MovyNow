@@ -1,0 +1,239 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width-collapsed);
+  background: linear-gradient(to right, rgba(15, 16, 20, 0.95) 0%, rgba(15, 16, 20, 0.8) 70%, transparent 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+}
+
+.sidebar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60px;
+  background: linear-gradient(to left, transparent, rgba(15, 16, 20, 0.9));
+  z-index: -1;
+}
+
+.sidebar.expanded {
+  width: var(--sidebar-width-expanded);
+  background: rgba(15, 16, 20, 0.98);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0 3rem 1.8rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  width: var(--sidebar-width-expanded);
+}
+
+.brand-mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent-gold), #ff8a00);
+  color: #15110b;
+  font-weight: 900;
+  box-shadow: 0 8px 20px rgba(255, 200, 87, 0.24);
+  flex-shrink: 0;
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-left: 1rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar.expanded .brand-copy {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.brand-name {
+  color: var(--accent-gold);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.brand-plan {
+  margin-top: 0.2rem;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.nav-links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 0 0 2.2rem;
+  width: var(--sidebar-width-expanded);
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-item .material-symbols-outlined {
+  font-size: 1.6rem;
+  transition: transform 0.2s ease;
+}
+
+.nav-item:hover {
+  color: var(--text-primary);
+  transform: scale(1.05);
+}
+
+.nav-item.active {
+  color: var(--text-primary);
+}
+
+.nav-label {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.sidebar.expanded .nav-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 16, 20, 0.9);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  padding-top: 15vh;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+  max-width: 800px;
+  height: 72px;
+  padding: 0 2rem;
+  background: var(--surface-raised);
+  border-radius: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1.4rem;
+  outline: none;
+}
+
+.search-box input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-icon {
+  font-size: 1.8rem;
+  color: var(--text-muted);
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.icon-button:hover {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 64px;
+    flex-direction: row;
+    background: rgba(15, 16, 20, 0.98);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0;
+    justify-content: space-around;
+  }
+  
+  .sidebar::after {
+    display: none;
+  }
+  
+  .sidebar.expanded {
+    width: 100%;
+  }
+
+  .brand-logo {
+    display: none;
+  }
+
+  .nav-links-container {
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    gap: 0;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nav-item {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .nav-label {
+    opacity: 1;
+    transform: none;
+    font-size: 0.65rem;
+  }
+  
+  .search-box {
+    height: 56px;
+    border-radius: 28px;
+  }
+}

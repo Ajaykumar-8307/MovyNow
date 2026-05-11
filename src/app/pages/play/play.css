@@ -1,0 +1,229 @@
+.player-page {
+  aspect-ratio: 16/9;
+  min-height: 100vh;
+  background: #03050a;
+  color: var(--text-primary);
+}
+
+.player-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 72px;
+  padding: 0.85rem clamp(1rem, 4vw, 3rem);
+  background: linear-gradient(180deg, rgba(3, 5, 10, 0.96), rgba(3, 5, 10, 0));
+}
+
+.back-button,
+.player-header button,
+.control-strip button {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.title-stack {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.title-stack span,
+.kicker {
+  color: var(--accent-gold);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.title-stack strong {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.player-shell {
+  position: relative;
+  display: grid;
+  min-height: min(100vh, 760px);
+  place-items: center;
+  overflow: hidden;
+  background: #000000;
+}
+
+.player-shell iframe {
+  aspect-ratio: 16/9;
+  min-height: 620px;
+  border: 0;
+}
+
+.player-shell video {
+  aspect-ratio: 16/9;
+  min-height: 620px;
+  border: 0;
+  background: #000000;
+}
+
+.player-state {
+  display: grid;
+  gap: 0.8rem;
+  place-items: center;
+  padding: 2rem;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.player-state .material-symbols-outlined {
+  color: var(--accent-hot);
+  font-size: 3rem;
+}
+
+.player-state h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.player-state p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.retry-button {
+  min-height: 42px;
+  padding: 0 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.control-strip {
+  position: absolute;
+  right: clamp(1rem, 4vw, 3rem);
+  bottom: 1.4rem;
+  left: clamp(1rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: auto auto auto minmax(120px, 1fr) auto auto;
+  gap: 0.7rem;
+  align-items: center;
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(3, 5, 10, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.control-strip .primary-control {
+  background: #ffffff;
+  color: #03050a;
+}
+
+.progress-track {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.progress-track span {
+  display: block;
+  width: 38%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent-teal);
+}
+
+.player-details {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2rem clamp(1rem, 5vw, 5rem);
+  background: var(--bg-color);
+}
+
+.player-details h1 {
+  margin: 0.35rem 0 0.65rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.player-details p {
+  max-width: 780px;
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.stream-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.stream-badges span {
+  padding: 0.25rem 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.details-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.loader {
+  width: 46px;
+  height: 46px;
+  border: 4px solid rgba(255, 255, 255, 0.14);
+  border-top-color: var(--accent-teal);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .player-shell iframe {
+    min-height: 520px;
+  }
+
+  .control-strip {
+    grid-template-columns: auto auto auto 1fr;
+  }
+
+  .control-strip button:nth-last-child(-n + 2) {
+    display: none;
+  }
+
+  .player-details {
+    flex-direction: column;
+  }
+}
